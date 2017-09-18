@@ -1,8 +1,8 @@
 {
-  "name": "@polkajs/skeleton-module",
-  "version": "1.0.4",
-  "description": "When creating new modules, use this skeletal structure",
-  "main": "index.js",
+  "name": "@polkajs/rencode",
+  "version": "1.0.0",
+  "description": "Improved Bencode style compression while maintaining type and primitive data",
+  "main": "./lib/rencode",
   "scripts": {
     "lint+build+test": "yarn run lint && yarn run build && yarn run test",
     "lint": "echo linting... && eslint ./src/**/*.js && echo 'successfully linted'",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PolkaJS/skeleton-module.git"
+    "url": "git+https://github.com/PolkaJS/rencode.git"
   },
   "author": "Craig OConnor",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PolkaJS/skeleton-module/issues"
+    "url": "https://github.com/PolkaJS/rencode/issues"
   },
-  "homepage": "https://github.com/PolkaJS/skeleton-module#readme",
+  "homepage": "https://github.com/PolkaJS/rencode#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",

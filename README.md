@@ -1,19 +1,15 @@
-# skeleton-module [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![Greenkeeper badge](https://badges.greenkeeper.io/PolkaJS/skeleton-module.svg)](https://greenkeeper.io/)
+# rencode [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![Greenkeeper badge](https://badges.greenkeeper.io/PolkaJS/rencode.svg)](https://greenkeeper.io/)
 
-[travis-image]: https://travis-ci.org/PolkaJS/skeleton-module.svg?branch=master
-[travis-url]: https://travis-ci.org/PolkaJS/skeleton-module
-[npm-image]: https://img.shields.io/npm/v/@polkajs/skeleton-module.svg
-[npm-url]: https://npmjs.org/package/@polkajs/skeleton-module
-[downloads-image]: https://img.shields.io/npm/dm/@polkajs/skeleton-module.svg
-[downloads-url]: https://npmjs.org/package/@polkajs/skeleton-module
+[travis-image]: https://travis-ci.org/PolkaJS/rencode.svg?branch=master
+[travis-url]: https://travis-ci.org/PolkaJS/rencode
+[npm-image]: https://img.shields.io/npm/v/@polkajs/rencode.svg
+[npm-url]: https://npmjs.org/package/@polkajs/rencode
+[downloads-image]: https://img.shields.io/npm/dm/@polkajs/rencode.svg
+[downloads-url]: https://npmjs.org/package/@polkajs/rencode
 
 ## About
 
-**Create new modules with this skeleton**
-
-`git clone https://github.com/PolkaJS/skeleton-module.git`
-
-`git remote rm origin`
+Bencode style compression while maintaining type and primitive data
 
 ---
 
