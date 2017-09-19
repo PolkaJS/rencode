@@ -55,20 +55,22 @@ export function encode(input: any): Uint8Array {
 
 function _encodeNumber(input: number): Uint8Array {
   let b, t;
+  console.log("INPUT", input);
   if (input < 0) {
     // Signed
-    if      (input >= (-127))        {t = U_INT_8;    b = new Buffer(1); b.writeUInt8(input, 0);   } // 8
-    else if (input >= (-32767))      {t = U_INT_16BE; b = new Buffer(2); b.writeUInt16BE(input, 0);} // 16
-    else if (input >= (-2147483647)) {t = U_INT_32BE; b = new Buffer(4); b.writeUInt32BE(input, 0);} // 32
+    if      (input >= (-127))        {t = INT_8;    b = new Buffer(1); b.writeInt8(input, 0);   } // 8
+    else if (input >= (-32767))      {t = INT_16BE; b = new Buffer(2); b.writeInt16BE(input, 0);} // 16
+    else if (input >= (-2147483647)) {t = INT_32BE; b = new Buffer(4); b.writeInt32BE(input, 0);} // 32
     // else                    {b = new Buffer(8); b.writeUInt64BE(input);} // 64
   } else {
     // Unsigned
-    if      (input <= 255)        {t = INT_8;    b = new Buffer(1); b.writeInt8(input, 0);   } // 8
-    else if (input <= 65535)      {t = INT_16BE; b = new Buffer(2); b.writeInt16BE(input, 0);} // 16
-    else if (input <= 4294967295) {t = INT_32BE; b = new Buffer(4); b.writeInt32BE(input, 0);} // 32
+    if      (input <= 255)        {t = U_INT_8;    b = new Buffer(1); b.writeUInt8(input, 0);   } // 8
+    else if (input <= 65535)      {t = U_INT_16BE; b = new Buffer(2); b.writeUInt16BE(input, 0);} // 16
+    else if (input <= 4294967295) {t = U_INT_32BE; b = new Buffer(4); b.writeUInt32BE(input, 0);} // 32
     // else                 b = new Buffer(8).writeInt8BE(input);  // 64
   }
-  return new Uint8Array([t, new Uint8Array(b)]);
+  console.log("BBBBBUUUUUUFFFFFEEERRRR", b);
+  return _concatBuffers(t, b);
 }
 
 function _encodeBuffer(input: Buffer): Uint8Array {
@@ -155,3 +157,10 @@ function _decodeString(input: Uint8Array) {
   // STR_256    = Uint8Array.from([0x23]),
   // STR_512    = Uint8Array.from([0x24]),
 }
+
+function _concatBuffers(buffer1: Buffer | Uint8Array, buffer2: Buffer | Uint8Array): Uint8Array {
+  let uintArray = new Uint8Array(buffer1.byteLength + buffer2.byteLength);
+  uintArray.set(new Uint8Array(buffer1), 0);
+  uintArray.set(new Uint8Array(buffer2), buffer1.byteLength);
+  return uintArray;
+};
