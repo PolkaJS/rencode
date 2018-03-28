@@ -29,7 +29,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^4.0.0",
-    "flow-bin": "^0.54.1",
+    "flow-bin": "^0.69.0",
     "tape": "^4.6.3"
   }
 }
