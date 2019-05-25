@@ -30,6 +30,6 @@
     "babel-preset-flow": "^6.23.0",
     "eslint": "^4.0.0",
     "flow-bin": "^0.54.1",
-    "tape": "^4.6.3"
+    "tape": "^4.10.2"
   }
 }
